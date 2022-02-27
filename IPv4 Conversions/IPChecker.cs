@@ -7,6 +7,9 @@ using System;
 
 namespace IPv4_Conversions
 {
+    /// <summary>
+    /// This class checks to see if the IP address is valid
+    /// </summary>
     class IPChecker
     {
         /// <summary>
@@ -23,9 +26,6 @@ namespace IPv4_Conversions
             //The ipAddress will be seperated after every '.' period
             char[] delimiterChars = { '.' };
 
-            //Set a counter to 0
-            int counter = 0;
-
             //Declare and instantiate an Array to hold the parts of the seperated IP address
             //Split the IP address into 4 parts
             string[] seperatedIP = ipAddress.Split(delimiterChars);
@@ -33,16 +33,11 @@ namespace IPv4_Conversions
             //foreach loop to loop through each part of the seperated IP address
             foreach (string testIP in seperatedIP)
             {
-                //Set digits to 0;
                 int digit = 0;
 
                 //Try to cast the testIP string  to integers to be compared
-                //Else through set isValid to false
-                try
-                {
-                    digit = Int32.Parse(testIP);
-                }
-                catch
+                //Else set isValid to false
+                if (!int.TryParse(testIP, out digit))
                 {
                     isValid = false;
                 }
@@ -50,27 +45,21 @@ namespace IPv4_Conversions
                 //If the digit in the section of the address is greater than 255: isValid = false
                 //If the digit in the section of the address is less thatn 0: isValid = false
                 //Break from loop
-                if (digit > 255 | digit < 0)
+                if (digit > 255 ^ digit < 0)
                 {
                     isValid = false;
                     break;
                 }
             }
+
             if (isValid == true)
             {
-                //foreach loop to loop through each part of the seperated Ip address
-                //Add 1 to counter each time through loop
-                foreach (string test in seperatedIP)
-                {
-                    counter += 1;
-                }
-                //If the counter is greater than 4 or less than 4: isValid = false
-                if (counter < 4 | counter > 4)
+                //If the seperatedIP length is not 4: isValid  = false;
+                if (seperatedIP.Length != 4)
                 {
                     isValid = false;
                 }
             }
-            //Return isValid
             return isValid;
         }
     }

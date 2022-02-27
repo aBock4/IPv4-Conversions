@@ -4,6 +4,9 @@
  * Converting binary numbers to IPv4 Addresses
  */namespace IPv4_Conversions
 {
+    /// <summary>
+    /// This class converts binary to IPv4 address
+    /// </summary>
     class BinarytoIP
     {
         /// <summary>
@@ -18,7 +21,7 @@
 
             //Declare and instantiate an Array to know how to seperate the binary
             //The binary number will be seperated after every period (.), comma (,), space ( ), or dash (-)
-            char[] delimiterChars = { ' ', '.', '-', ','};
+            char[] delimiterChars = {'.'};
 
             //Declare and instantiate an Array to hold the parts of the seperated binary number
             //Split the binary number into 4 parts
@@ -57,10 +60,9 @@
                 //Format the ipAddress with a period (.)
                 ipAddress += IPsection + ".";
             }
-            //Trim the period off of the final bipAddress
+            //Trim the period off of the final ipAddress
             ipAddress = ipAddress.TrimEnd('.');
 
-            //Return the ipAddress
             return ipAddress;
         }
     }

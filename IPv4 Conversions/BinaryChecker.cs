@@ -7,6 +7,9 @@ using System;
 
 namespace IPv4_Conversions
 {
+    /// <summary>
+    /// This class checks to see if the binary number is valid
+    /// </summary>
     class BinaryChecker
     {
         /// <summary>
@@ -21,7 +24,7 @@ namespace IPv4_Conversions
 
             //Declare and instantiate an Array to know how to seperate the binary
             //The binary number will be seperated after every period (.), comma (,), space ( ), or dash (-)
-            char[] delimiterChars = { ' ', '.', '-' };
+            char[] delimiterChars = {'.'};
 
             //Declare and instantiate an Array to hold the parts of the seperated binary number
             //Split the binary number into 4 parts
@@ -60,7 +63,6 @@ namespace IPv4_Conversions
                     }
                 }
             }
-            //Return isValid
             return isValid;
         }
     }

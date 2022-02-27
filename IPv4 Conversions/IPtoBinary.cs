@@ -7,6 +7,9 @@ using System;
 
 namespace IPv4_Conversions
 {
+    /// <summary>
+    /// This class converts an IPv4 Address to binary
+    /// </summary>
     class IPtoBinary
     {
         /// <summary>
@@ -52,7 +55,7 @@ namespace IPv4_Conversions
 
                     }
                     //Else set the bit in the binaryNumberto a 0
-                    else { binaryNumber += "0"; };
+                    else { binaryNumber += "0"; }
 
                     //Add 1 to the counter
                     //Divite the bit by 2
@@ -65,7 +68,6 @@ namespace IPv4_Conversions
             //Trim the period off of the final binaryNumber
             binaryNumber = binaryNumber.TrimEnd('.');
 
-            //Return the binaryNmber
             return binaryNumber;
         }
     }

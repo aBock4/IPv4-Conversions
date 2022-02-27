@@ -91,8 +91,6 @@ namespace IPv4_Conversions
                 //Print an error message to console
                 Console.WriteLine("Please enter a valid 32 bit binary number!");
             }
-
-
         }
     }
 }
