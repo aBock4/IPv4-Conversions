@@ -33,15 +33,13 @@ namespace IPv4_Conversions
             //foreach loop to loop through each part of the seperated IP address
             foreach (string testIP in seperatedIP)
             {
-                int digit = 0;
-
                 //Try to cast the testIP string  to integers to be compared
                 //Else set isValid to false
-                if (!int.TryParse(testIP, out digit))
+                if (!int.TryParse(testIP, out int digit))
                 {
                     isValid = false;
                 }
-                
+
                 //If the digit in the section of the address is greater than 255: isValid = false
                 //If the digit in the section of the address is less thatn 0: isValid = false
                 //Break from loop
